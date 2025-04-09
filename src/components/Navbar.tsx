@@ -10,14 +10,11 @@ const Navbar: React.FC = () => {
     <nav className="py-4 border-b border-gray-100">
       <div className="container px-4 mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <div className="flex">
-            <div className="bg-opta-purple p-2 flex items-center justify-center w-14 h-14">
-              <span className="text-white text-2xl font-light">[/]</span>
-            </div>
-            <div className="bg-white p-2 flex items-center justify-center w-36 h-14">
-              <span className="text-opta-black text-2xl font-bold">OPTA</span>
-            </div>
-          </div>
+          <img 
+            src="/lovable-uploads/opta-logo.png" 
+            alt="Logo de OPTA" 
+            className="h-14" 
+          />
         </div>
 
         {/* Desktop Navigation */}
