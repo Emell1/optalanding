@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
           </div>
           <div className="w-full md:w-1/2 relative">
             <img 
-              src="/lovable-uploads/opta-screenshot-1.png" 
+              src="/opta-screenshot-1.png" 
               alt="Interfaz de OPTA mostrando la búsqueda de documentos" 
               className="w-full h-auto rounded-xl shadow-xl animate-fade-in" 
             />
