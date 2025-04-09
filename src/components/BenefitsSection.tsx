@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, Check, Repeat, Scale, Users, Briefcase, Headphones, BookOpen } from 'lucide-react';
+import { TrendingUp, Check, Repeat, Scale, Users, Briefcase, Headphones, BookOpen, ExternalLink } from 'lucide-react';
 
 const benefits = [
   {
@@ -22,20 +22,24 @@ const benefits = [
 
 const useCases = [
   {
-    icon: <Users className="h-6 w-6 text-opta-purple" />,
-    title: "Equipos comerciales que necesitan acceder a respuestas rápidas y coherentes"
+    icon: <Users className="h-6 w-6 text-white" />,
+    title: "Equipos comerciales que necesitan acceder a respuestas rápidas y coherentes",
+    bgColor: "bg-opta-purple"
   },
   {
-    icon: <Briefcase className="h-6 w-6 text-opta-purple" />,
-    title: "Soporte interno de RRHH para onboarding y gestión de consultas"
+    icon: <Briefcase className="h-6 w-6 text-white" />,
+    title: "Soporte interno de RRHH para onboarding y gestión de consultas",
+    bgColor: "bg-opta-purple-light"
   },
   {
-    icon: <Headphones className="h-6 w-6 text-opta-purple" />,
-    title: "Centros de atención con procesos repetitivos que requieren guía precisa"
+    icon: <Headphones className="h-6 w-6 text-white" />,
+    title: "Centros de atención con procesos repetitivos que requieren guía precisa",
+    bgColor: "bg-opta-purple"
   },
   {
-    icon: <BookOpen className="h-6 w-6 text-opta-purple" />,
-    title: "Equipos de formación con recursos dispersos o poco estructurados"
+    icon: <BookOpen className="h-6 w-6 text-white" />,
+    title: "Equipos de formación con recursos dispersos o poco estructurados",
+    bgColor: "bg-opta-purple-light"
   }
 ];
 
@@ -78,20 +82,29 @@ const BenefitsSection: React.FC = () => {
             Cada organización tiene sus desafíos. Aquí algunos ejemplos de aplicación real:
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-4">
             {useCases.map((useCase, index) => (
-              <div key={index} className="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                <div className="bg-opta-purple/10 p-3 rounded-full mr-3 flex-shrink-0">
-                  {useCase.icon}
+              <div 
+                key={index} 
+                className={`${useCase.bgColor} rounded-lg p-4 transition-all hover:scale-[1.01] shadow-md hover:shadow-lg cursor-pointer`}
+              >
+                <div className="flex items-center">
+                  <div className="bg-white/20 p-3 rounded-full mr-4 flex-shrink-0">
+                    {useCase.icon}
+                  </div>
+                  <p className="text-lg text-white flex-grow">{useCase.title}</p>
+                  <ExternalLink className="h-5 w-5 text-white/70" />
                 </div>
-                <p className="text-lg text-gray-800">{useCase.title}</p>
               </div>
             ))}
           </div>
           
-          <div className="mt-8 p-4 rounded-lg bg-gray-50 border border-gray-200">
-            <p className="text-center text-gray-700 font-medium">
-              ¿Tienes otro caso? Hablemos y lo diseñamos juntos.
+          <div className="mt-8 p-6 rounded-lg bg-gray-50 border border-gray-200 text-center">
+            <p className="text-lg text-gray-700 font-medium mb-2">
+              ¿Tienes otro caso?
+            </p>
+            <p className="text-opta-purple">
+              Hablemos y lo diseñamos juntos
             </p>
           </div>
         </div>

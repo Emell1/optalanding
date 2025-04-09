@@ -1,32 +1,30 @@
 
 import React from 'react';
-import { Search, Settings, MessageSquare, Layers, RefreshCw } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Search, Settings, MessageSquare, Layers, RefreshCw, ArrowRight } from 'lucide-react';
 
 const metodologySteps = [
   {
-    icon: <Search className="h-8 w-8 text-opta-purple" />,
+    icon: <Search className="h-8 w-8 text-white" />,
     title: "Diagnóstico inicial",
     description: "Analizamos tus procesos actuales, puntos críticos y oportunidades de mejora."
   },
   {
-    icon: <MessageSquare className="h-8 w-8 text-opta-purple" />,
+    icon: <MessageSquare className="h-8 w-8 text-white" />,
     title: "Diseño conversacional",
     description: "Definimos cómo debe responder OPTA según tu lógica de negocio."
   },
   {
-    icon: <Settings className="h-8 w-8 text-opta-purple" />,
+    icon: <Settings className="h-8 w-8 text-white" />,
     title: "Configuración personalizada",
     description: "Creamos filtros, contenidos y niveles de respuesta adaptados a tu operación."
   },
   {
-    icon: <Layers className="h-8 w-8 text-opta-purple" />,
+    icon: <Layers className="h-8 w-8 text-white" />,
     title: "Implementación ágil",
     description: "Integramos la solución en tus sistemas y capacitamos a tu equipo."
   },
   {
-    icon: <RefreshCw className="h-8 w-8 text-opta-purple" />,
+    icon: <RefreshCw className="h-8 w-8 text-white" />,
     title: "Mejora continua",
     description: "Seguimos ajustando y evolucionando OPTA con base en datos reales de uso y feedback."
   }
@@ -43,26 +41,35 @@ const DemoSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {metodologySteps.map((item, index) => (
-            <Card key={index} className="border-none shadow-lg overflow-hidden">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <div className="bg-opta-purple/10 p-3 rounded-full mr-3">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-opta-purple">{item.title}</h3>
+        <div className="relative max-w-6xl mx-auto mb-16">
+          {/* Línea conectora */}
+          <div className="absolute top-14 left-0 right-0 h-1 bg-gradient-to-r from-opta-purple to-opta-purple-dark z-0 hidden md:block"></div>
+          
+          {/* Pasos del proceso */}
+          <div className="flex flex-col md:flex-row gap-4 relative z-10">
+            {metodologySteps.map((step, index) => (
+              <div key={index} className="flex-1 flex flex-col items-center">
+                <div className="bg-gradient-to-r from-opta-purple to-opta-purple-dark rounded-full w-28 h-28 flex items-center justify-center mb-4 shadow-lg">
+                  {step.icon}
                 </div>
-                <p className="text-gray-600">{item.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+                <h3 className="text-xl font-semibold text-center mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-center text-sm">{step.description}</p>
+                
+                {/* Flechas conectoras (excepto último elemento) */}
+                {index < metodologySteps.length - 1 && (
+                  <div className="hidden md:flex absolute top-14 left-[calc(20%*1.5+10%*1.25)] transform -translate-x-1/2">
+                    <ArrowRight className="h-8 w-8 text-opta-purple-light" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="mt-12 text-center">
-          <Button className="bg-opta-purple hover:bg-opta-purple-dark px-8 py-6 text-lg">
+          <button className="bg-opta-purple hover:bg-opta-purple-dark text-white px-8 py-6 rounded-lg text-lg font-medium transition-colors">
             Comienza tu proceso de diagnóstico
-          </Button>
+          </button>
         </div>
       </div>
     </section>

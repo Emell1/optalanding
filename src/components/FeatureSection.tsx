@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Filter, MessageSquare, FileText, Search, BarChart3, Lock, Settings } from 'lucide-react';
+import { Filter, MessageSquare, Search, BarChart3, Lock, Settings } from 'lucide-react';
 
 const features = [
   {
@@ -12,11 +12,6 @@ const features = [
     icon: <MessageSquare className="h-8 w-8 text-opta-purple" />,
     title: 'Chat conversacional',
     description: 'Interacción natural con respuestas enriquecidas y adaptadas a tus necesidades.'
-  },
-  {
-    icon: <FileText className="h-8 w-8 text-opta-purple" />,
-    title: 'Panel inteligente',
-    description: 'Acceso organizado a todos tus documentos y recursos desde un solo lugar.'
   },
   {
     icon: <Search className="h-8 w-8 text-opta-purple" />,
@@ -81,8 +76,8 @@ const FeatureSection: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {features.slice(4, 7).map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          {features.slice(4, 6).map((feature, index) => (
             <div 
               key={index} 
               className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col"
