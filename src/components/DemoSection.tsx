@@ -41,16 +41,14 @@ const DemoSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Modified grid layout - first 3 cards in top row, last 2 cards centered in bottom row */}
         <div className="max-w-6xl mx-auto">
-          {/* Top row with first 3 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {/* Primera fila con 3 tarjetas */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {metodologySteps.slice(0, 3).map((step, index) => (
               <div 
                 key={index} 
-                className="group"
+                className="group h-full"
               >
-                {/* Tarjeta con diseño único para la metodología (sin números) */}
                 <div className="relative overflow-hidden rounded-xl h-full bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
                   <div className="p-6 flex flex-col h-full">
                     {/* Icono con efecto de gradiente */}
@@ -76,14 +74,13 @@ const DemoSection: React.FC = () => {
             ))}
           </div>
           
-          {/* Bottom row with last 2 cards, centered */}
+          {/* Segunda fila con 2 tarjetas, centradas */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {metodologySteps.slice(3).map((step, index) => (
               <div 
                 key={index + 3} 
-                className="group"
+                className="group h-full"
               >
-                {/* Tarjeta con diseño único para la metodología (sin números) */}
                 <div className="relative overflow-hidden rounded-xl h-full bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
                   <div className="p-6 flex flex-col h-full">
                     {/* Icono con efecto de gradiente */}
