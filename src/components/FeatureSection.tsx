@@ -1,37 +1,37 @@
 
 import React from 'react';
-import { MessageSquare, Filter, Search, Clock, User, FileText } from 'lucide-react';
+import { MessageSquare, Filter, Search, Clock, User, FileText, Settings } from 'lucide-react';
 
 const features = [
   {
-    icon: <MessageSquare className="h-8 w-8 text-opta-purple" />,
-    title: 'Interacción Natural',
-    description: 'Chat intuitivo que entiende tu flujo de trabajo y se adapta a tus necesidades.'
-  },
-  {
     icon: <Filter className="h-8 w-8 text-opta-purple" />,
-    title: 'Filtros Inteligentes',
-    description: 'Elige opciones que activan dinámicamente categorías, ítems y subitems, en función de tu contexto.'
+    title: 'Filtros dinámicos',
+    description: 'Activan categorías, ítems y subitems según el contexto de tu consulta.'
   },
   {
-    icon: <Search className="h-8 w-8 text-opta-purple" />,
-    title: 'Búsqueda por Palabras Clave',
-    description: 'Encuentra documentos y respuestas exactas en segundos, directamente desde la barra conversacional.'
+    icon: <MessageSquare className="h-8 w-8 text-opta-purple" />,
+    title: 'Chat conversacional',
+    description: 'Interacción natural con respuestas enriquecidas y adaptadas a tus necesidades.'
   },
   {
     icon: <FileText className="h-8 w-8 text-opta-purple" />,
-    title: 'Respuestas Enriquecidas',
-    description: 'Recibe respuestas visuales, con estilo, imágenes, links y subrespuestas prioritarias.'
+    title: 'Panel inteligente',
+    description: 'Acceso organizado a todos tus documentos y recursos desde un solo lugar.'
+  },
+  {
+    icon: <Search className="h-8 w-8 text-opta-purple" />,
+    title: 'Búsqueda priorizada',
+    description: 'Encuentra información por palabras clave con lógica de prioridades integrada.'
   },
   {
     icon: <Clock className="h-8 w-8 text-opta-purple" />,
-    title: 'Historial con Contexto',
-    description: 'Consulta tu recorrido completo: cada interacción queda registrada con fecha y hora.'
+    title: 'Registro de historial',
+    description: 'Métricas detalladas y seguimiento de todas las interacciones por usuario.'
   },
   {
-    icon: <User className="h-8 w-8 text-opta-purple" />,
-    title: 'Perfiles y Permisos',
-    description: 'Gestiona accesos y roles de usuario, incluyendo vistas para administradores y grupos personalizados.'
+    icon: <Settings className="h-8 w-8 text-opta-purple" />,
+    title: 'Panel administrador',
+    description: 'Gestión avanzada de contenidos, perfiles y permisos totalmente personalizable.'
   }
 ];
 
@@ -40,9 +40,9 @@ const FeatureSection: React.FC = () => {
     <section id="features" className="py-16 bg-gray-50">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Lo esencial, al alcance de una conversación</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Una herramienta poderosa, diseñada a tu medida</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Con tecnología conversacional y filtros inteligentes, OPTA convierte la complejidad en claridad.
+            Estas son algunas de las funciones que forman la base de OPTA. El resto lo desarrollamos juntos:
           </p>
         </div>
         
