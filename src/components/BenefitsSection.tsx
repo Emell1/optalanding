@@ -1,22 +1,41 @@
 
 import React from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { TrendingUp, Check, Repeat, CheckCircle2 } from 'lucide-react';
 
 const benefits = [
   {
-    title: 'Mayor Productividad',
-    description: 'Reduce el tiempo dedicado a buscar información y a realizar tareas repetitivas.',
-    image: '/placeholder.svg'
+    icon: <TrendingUp className="h-10 w-10 text-opta-purple" />,
+    title: '+ Productividad',
+    description: 'Reduce tareas repetitivas y accede a la información de forma instantánea.'
   },
   {
-    title: 'Toma de Decisiones Informada',
-    description: 'Accede rápidamente a datos e información relevante para tomar mejores decisiones.',
-    image: '/placeholder.svg'
+    icon: <Check className="h-10 w-10 text-opta-purple" />,
+    title: '+ Precisión',
+    description: 'Minimiza errores operativos con contenidos validados y respuestas priorizadas.'
   },
   {
-    title: 'Consistencia en Procesos',
-    description: 'Mantén la estandarización en todos los procesos de tu organización.',
-    image: '/placeholder.svg'
+    icon: <Repeat className="h-10 w-10 text-opta-purple" />,
+    title: '+ Consistencia',
+    description: 'Mantén el estándar en tus procesos internos y la calidad en la entrega.'
+  }
+];
+
+const results = [
+  {
+    icon: "🕒",
+    title: "-40% de tiempo en búsquedas de información"
+  },
+  {
+    icon: "😊",
+    title: "+35% en satisfacción de colaboradores"
+  },
+  {
+    icon: "✅",
+    title: "-25% en errores de procedimiento"
+  },
+  {
+    icon: "📈",
+    title: "ROI < 6 meses con una implementación ágil"
   }
 ];
 
@@ -25,9 +44,9 @@ const BenefitsSection: React.FC = () => {
     <section id="benefits" className="py-16 bg-white">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Beneficios de OPTA</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Resultados visibles, mejoras reales</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Descubre cómo OPTA puede transformar la manera en que trabajas y aprendes
+            OPTA te ayuda a automatizar, sistematizar y evolucionar tus procesos de conocimiento.
           </p>
         </div>
         
@@ -38,12 +57,8 @@ const BenefitsSection: React.FC = () => {
               className="rounded-lg p-6 bg-gray-50 border border-gray-100"
             >
               <div className="flex justify-center mb-6">
-                <div className="h-24 w-24 rounded-full bg-opta-purple/20 flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={benefit.image} 
-                    alt={benefit.title} 
-                    className="object-cover h-16 w-16" 
-                  />
+                <div className="h-20 w-20 rounded-full bg-opta-purple/20 flex items-center justify-center">
+                  {benefit.icon}
                 </div>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-center">{benefit.title}</h3>
@@ -53,40 +68,15 @@ const BenefitsSection: React.FC = () => {
         </div>
         
         <div className="bg-gray-50 rounded-xl p-8 max-w-4xl mx-auto border border-gray-100">
-          <h3 className="text-2xl font-bold mb-6 text-center">Resultados Comprobados</h3>
+          <h3 className="text-2xl font-bold mb-6 text-center">¿Qué han logrado nuestros usuarios?</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-opta-purple mr-3 flex-shrink-0 mt-0.5" />
-              <div>
-                <h4 className="font-semibold text-lg mb-1">Ahorro de tiempo</h4>
-                <p className="text-gray-600">Reducción del 40% en tiempo dedicado a búsqueda de información</p>
+            {results.map((result, index) => (
+              <div key={index} className="flex items-start">
+                <div className="text-3xl mr-3 flex-shrink-0">{result.icon}</div>
+                <p className="text-lg font-medium text-gray-800">{result.title}</p>
               </div>
-            </div>
-            
-            <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-opta-purple mr-3 flex-shrink-0 mt-0.5" />
-              <div>
-                <h4 className="font-semibold text-lg mb-1">Mejora en satisfacción</h4>
-                <p className="text-gray-600">Aumento del 35% en índices de satisfacción de usuarios</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-opta-purple mr-3 flex-shrink-0 mt-0.5" />
-              <div>
-                <h4 className="font-semibold text-lg mb-1">Optimización de procesos</h4>
-                <p className="text-gray-600">Reducción del 25% en errores de procedimiento</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-opta-purple mr-3 flex-shrink-0 mt-0.5" />
-              <div>
-                <h4 className="font-semibold text-lg mb-1">ROI positivo</h4>
-                <p className="text-gray-600">Retorno de inversión promedio en menos de 6 meses</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

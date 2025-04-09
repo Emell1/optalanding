@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Footer: React.FC = () => {
@@ -14,7 +15,7 @@ const Footer: React.FC = () => {
               />
             </div>
             <p className="text-gray-400 mb-4">
-              El optimizador de procesos, tareas y aprendizaje que transformará tu organización.
+              OPTA es el optimizador de procesos, tareas y aprendizaje que necesitas para crecer con inteligencia.
             </p>
           </div>
           
@@ -42,7 +43,7 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sobre Nosotros</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+              <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Política de Privacidad</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Términos de Servicio</a></li>
             </ul>
@@ -50,7 +51,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} OPTA. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} OPTA. Transformamos procesos en conocimiento.</p>
         </div>
       </div>
     </footer>

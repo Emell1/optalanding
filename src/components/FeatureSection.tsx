@@ -5,33 +5,33 @@ import { MessageSquare, Filter, Search, Clock, User, FileText } from 'lucide-rea
 const features = [
   {
     icon: <MessageSquare className="h-8 w-8 text-opta-purple" />,
-    title: 'Interfaz Conversacional',
-    description: 'Interactúa de forma natural a través de una interfaz de chat intuitiva que facilita la comunicación.'
+    title: 'Interacción Natural',
+    description: 'Chat intuitivo que entiende tu flujo de trabajo y se adapta a tus necesidades.'
   },
   {
     icon: <Filter className="h-8 w-8 text-opta-purple" />,
-    title: 'Sistema de Filtros Dinámicos',
-    description: 'Navega por categorías y opciones que se adaptan según tus selecciones previas.'
+    title: 'Filtros Inteligentes',
+    description: 'Elige opciones que activan dinámicamente categorías, ítems y subitems, en función de tu contexto.'
   },
   {
     icon: <Search className="h-8 w-8 text-opta-purple" />,
     title: 'Búsqueda por Palabras Clave',
-    description: 'Encuentra rápidamente documentos y respuestas mediante búsquedas precisas por palabras clave.'
+    description: 'Encuentra documentos y respuestas exactas en segundos, directamente desde la barra conversacional.'
   },
   {
     icon: <FileText className="h-8 w-8 text-opta-purple" />,
     title: 'Respuestas Enriquecidas',
-    description: 'Visualiza respuestas con formato enriquecido, incluyendo imágenes y texto con estilo.'
+    description: 'Recibe respuestas visuales, con estilo, imágenes, links y subrespuestas prioritarias.'
   },
   {
     icon: <Clock className="h-8 w-8 text-opta-purple" />,
-    title: 'Historial de Consultas',
-    description: 'Accede a tu historial completo de interacciones con fecha y hora para recapitular tu gestión.'
+    title: 'Historial con Contexto',
+    description: 'Consulta tu recorrido completo: cada interacción queda registrada con fecha y hora.'
   },
   {
     icon: <User className="h-8 w-8 text-opta-purple" />,
-    title: 'Perfiles Personalizados',
-    description: 'Gestiona tu perfil con distintos niveles de acceso según tus necesidades.'
+    title: 'Perfiles y Permisos',
+    description: 'Gestiona accesos y roles de usuario, incluyendo vistas para administradores y grupos personalizados.'
   }
 ];
 
@@ -40,9 +40,9 @@ const FeatureSection: React.FC = () => {
     <section id="features" className="py-16 bg-gray-50">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Características Principales</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Lo esencial, al alcance de una conversación</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            OPTA ofrece una experiencia completa para optimizar la gestión de procesos, tareas y aprendizaje
+            Con tecnología conversacional y filtros inteligentes, OPTA convierte la complejidad en claridad.
           </p>
         </div>
         
