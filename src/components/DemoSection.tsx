@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, Settings, MessageSquare, Layers } from 'lucide-react';
+import { Search, Settings, MessageSquare, Layers, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const demoItems = [
