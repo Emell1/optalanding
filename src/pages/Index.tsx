@@ -6,6 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import FeatureSection from '@/components/FeatureSection';
 import DemoSection from '@/components/DemoSection';
 import BenefitsSection from '@/components/BenefitsSection';
+import ContactForm from '@/components/ContactForm';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 
@@ -19,6 +20,7 @@ const Index = () => {
       <DemoSection />
       <BenefitsSection />
       <CallToAction />
+      <ContactForm />
       <Footer />
     </div>
   );
