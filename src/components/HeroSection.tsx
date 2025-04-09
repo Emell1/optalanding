@@ -17,10 +17,6 @@ const HeroSection: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Button className="bg-opta-purple hover:bg-opta-purple-dark px-8 py-6 text-lg">Descubre cómo funciona</Button>
-              <Button variant="outline" className="border-opta-purple text-opta-purple hover:bg-opta-purple/10 px-8 py-6 text-lg flex items-center gap-2">
-                <Play size={18} />
-                Agenda una reunión
-              </Button>
             </div>
           </div>
           <div className="w-full md:w-1/2 relative">

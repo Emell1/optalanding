@@ -2,6 +2,7 @@
 import React from 'react';
 import { Search, Settings, MessageSquare, Layers, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
 const metodologySteps = [
   {
@@ -44,15 +45,17 @@ const DemoSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {metodologySteps.map((item, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="p-6">
+            <Card key={index} className="border-none shadow-lg overflow-hidden">
+              <CardContent className="p-6">
                 <div className="flex items-center mb-3">
-                  <div className="mr-3">{item.icon}</div>
+                  <div className="bg-opta-purple/10 p-3 rounded-full mr-3">
+                    {item.icon}
+                  </div>
                   <h3 className="text-xl font-semibold text-opta-purple">{item.title}</h3>
                 </div>
                 <p className="text-gray-600">{item.description}</p>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
         

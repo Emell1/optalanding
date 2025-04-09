@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MessageSquare, Filter, Search, FileText } from 'lucide-react';
+import { Filter, MessageSquare, FileText, Search, BarChart3, Lock, Settings } from 'lucide-react';
 
 const features = [
   {
@@ -22,6 +22,21 @@ const features = [
     icon: <Search className="h-8 w-8 text-opta-purple" />,
     title: 'Búsqueda priorizada',
     description: 'Encuentra información por palabras clave con lógica de prioridades integrada.'
+  },
+  {
+    icon: <BarChart3 className="h-8 w-8 text-opta-purple" />,
+    title: 'Registro de historial',
+    description: 'Seguimiento de métricas por usuario para analizar el uso y optimizar la herramienta.'
+  },
+  {
+    icon: <Lock className="h-8 w-8 text-opta-purple" />,
+    title: 'Perfiles y permisos',
+    description: 'Gestión avanzada de contenidos y accesos según el rol de cada usuario.'
+  },
+  {
+    icon: <Settings className="h-8 w-8 text-opta-purple" />,
+    title: 'Panel administrador',
+    description: 'Interfaz personalizable para gestionar todos los aspectos de la plataforma.'
   }
 ];
 
@@ -51,7 +66,7 @@ const FeatureSection: React.FC = () => {
             </div>
           </div>
           <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
-            {features.map((feature, index) => (
+            {features.slice(0, 4).map((feature, index) => (
               <div 
                 key={index} 
                 className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col"
@@ -64,6 +79,21 @@ const FeatureSection: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          {features.slice(4, 7).map((feature, index) => (
+            <div 
+              key={index} 
+              className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col"
+            >
+              <div className="mb-3 flex items-center gap-2">
+                {feature.icon}
+                <h3 className="text-lg font-semibold">{feature.title}</h3>
+              </div>
+              <p className="text-gray-600 text-sm">{feature.description}</p>
+            </div>
+          ))}
         </div>
         
         <div className="mt-16 bg-gradient-to-r from-opta-purple to-opta-purple-dark rounded-xl overflow-hidden shadow-lg">

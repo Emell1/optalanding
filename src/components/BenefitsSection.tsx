@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, Check, Repeat, CheckCircle2, Users, Briefcase, Headphones, BookOpen } from 'lucide-react';
+import { TrendingUp, Check, Repeat, Scale, Users, Briefcase, Headphones, BookOpen } from 'lucide-react';
 
 const benefits = [
   {
