@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageSquare, Filter, FileText, Clock, User } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   return (
