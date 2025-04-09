@@ -41,41 +41,45 @@ const DemoSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
-          {/* Contenedor de proceso con línea de tiempo */}
-          <div className="relative pb-12">
-            {/* Línea de tiempo */}
-            <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-opta-purple-light via-opta-purple to-opta-purple-dark transform -translate-y-1/2 hidden md:block"></div>
+        <div className="max-w-5xl mx-auto relative">
+          {/* Metodología moderna con efecto de gradiente y movimiento fluido */}
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 relative mb-10">
+            {/* Línea conectora en desktop */}
+            <div className="hidden md:block absolute top-16 left-0 w-full h-1 bg-gradient-to-r from-opta-purple-light via-opta-purple to-opta-purple-dark opacity-60"></div>
             
-            {/* Pasos del proceso */}
-            <div className="flex flex-col md:flex-row justify-between relative">
-              {metodologySteps.map((step, index) => (
-                <div key={index} className="flex flex-col items-center mb-12 md:mb-0 relative z-10">
-                  {/* Número de paso */}
-                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-opta-purple-light font-bold text-5xl opacity-20">
-                    {index + 1}
-                  </div>
-                  
-                  {/* Círculo con icono */}
-                  <div className={`w-28 h-28 rounded-full flex items-center justify-center shadow-lg mb-4 
-                    ${index % 2 === 0 ? 'bg-gradient-to-br from-opta-purple to-opta-purple-dark' : 'bg-gradient-to-br from-opta-purple-dark to-opta-purple'}`}>
-                    {step.icon}
-                  </div>
-                  
-                  {/* Contenido del paso */}
-                  <div className="max-w-[180px] text-center mt-4">
-                    <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                    <p className="text-gray-600 text-sm">{step.description}</p>
-                  </div>
-                  
-                  {/* Líneas conectoras entre pasos (solo en móvil) */}
-                  {index < metodologySteps.length - 1 && (
-                    <div className="h-10 w-0.5 bg-gradient-to-b from-opta-purple to-opta-purple-light my-2 md:hidden"></div>
-                  )}
+            {metodologySteps.map((step, index) => (
+              <div 
+                key={index} 
+                className="relative flex flex-col items-center max-w-[200px] group transition-all duration-300 hover:-translate-y-2"
+              >
+                {/* Fase número */}
+                <span className="text-xs font-semibold text-opta-purple-light opacity-80 mb-2">
+                  FASE {index + 1}
+                </span>
+                
+                {/* Círculo con icono */}
+                <div className="w-16 h-16 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-md mb-4 z-10
+                  bg-gradient-to-br from-opta-purple to-opta-purple-dark group-hover:shadow-lg transition-all duration-300">
+                  {step.icon}
                 </div>
-              ))}
-            </div>
+                
+                {/* Contenido */}
+                <div className="text-center">
+                  <h3 className="font-semibold mb-2 text-gray-800">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
+                </div>
+                
+                {/* Conector vertical sólo en móvil */}
+                {index < metodologySteps.length - 1 && (
+                  <div className="h-8 w-0.5 bg-gradient-to-b from-opta-purple to-opta-purple-light my-2 md:hidden"></div>
+                )}
+              </div>
+            ))}
           </div>
+
+          {/* Elementos decorativos */}
+          <div className="absolute -z-10 top-1/2 left-1/4 w-32 h-32 bg-opta-purple-light/5 rounded-full blur-3xl"></div>
+          <div className="absolute -z-10 top-1/3 right-1/4 w-40 h-40 bg-opta-purple/5 rounded-full blur-3xl"></div>
         </div>
         
         <div className="mt-12 text-center">

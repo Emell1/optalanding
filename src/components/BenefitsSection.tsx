@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, Check, Repeat, Users, Briefcase, GraduationCap, HeadphonesIcon, ArrowRight } from 'lucide-react';
+import { TrendingUp, Check, Repeat, ArrowRight } from 'lucide-react';
 
 const benefits = [
   {
@@ -22,22 +22,22 @@ const benefits = [
 
 const useCases = [
   {
-    icon: <Users size={24} />,
+    icon: "👥",
     title: "Equipos comerciales que necesitan acceder a respuestas rápidas y coherentes",
     description: "Información de productos, precios y procesos siempre actualizada y accesible"
   },
   {
-    icon: <Briefcase size={24} />,
+    icon: "🚀",
     title: "Soporte interno de RRHH para onboarding y gestión de consultas",
     description: "Políticas, procedimientos y respuestas a preguntas frecuentes en un solo lugar"
   },
   {
-    icon: <HeadphonesIcon size={24} />,
+    icon: "🎧",
     title: "Centros de atención con procesos repetitivos que requieren guía precisa",
     description: "Flujos de trabajo guiados y respuestas estandarizadas para mayor consistencia"
   },
   {
-    icon: <GraduationCap size={24} />,
+    icon: "🎓",
     title: "Equipos de formación con recursos dispersos o poco estructurados",
     description: "Centralización de materiales formativos y acceso con filtrado inteligente"
   }
@@ -89,8 +89,7 @@ const BenefitsSection: React.FC = () => {
                 className="bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-xl overflow-hidden group"
               >
                 <div className="flex items-start p-5 border border-gray-100 rounded-xl">
-                  <div className={`p-3 rounded-full mr-4 flex-shrink-0 transition-colors duration-300 
-                    ${index % 2 === 0 ? 'bg-opta-purple text-white' : 'bg-opta-purple-light text-white'}`}>
+                  <div className={`text-4xl mr-4 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
                     {useCase.icon}
                   </div>
                   <div className="flex-grow">
@@ -107,10 +106,10 @@ const BenefitsSection: React.FC = () => {
           
           <div className="mt-10 p-6 rounded-xl bg-gray-50 border border-gray-200 text-center hover:bg-gray-100 transition-colors duration-300 cursor-pointer group">
             <p className="text-lg text-gray-700 font-medium mb-2 group-hover:text-opta-purple transition-colors duration-300">
-              ¿Tienes otro caso?
+              ¿Tienes otro caso? 
             </p>
             <p className="text-opta-purple font-medium">
-              Hablemos y lo diseñamos juntos
+              Hablemos y lo diseñamos juntos 🤝
             </p>
           </div>
         </div>

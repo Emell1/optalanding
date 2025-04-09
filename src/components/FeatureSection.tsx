@@ -47,8 +47,8 @@ const FeatureSection: React.FC = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="relative rounded-xl overflow-hidden shadow-xl h-[400px] col-span-1 row-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="md:col-span-3 rounded-xl overflow-hidden shadow-xl h-[400px]">
             <img 
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
               alt="OPTA en acción" 
@@ -59,40 +59,20 @@ const FeatureSection: React.FC = () => {
               <p className="text-white/90">Interfaz intuitiva que combina filtros dinámicos con respuestas conversacionales enriquecidas.</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {features.slice(0, 4).map((feature, index) => (
-              <Card 
-                key={index} 
-                className="bg-white hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100/60 group"
-              >
-                <CardContent className="p-5">
-                  <div className="mb-3 flex items-center gap-2">
-                    <div className="p-2 rounded-lg bg-opta-purple/10 group-hover:bg-opta-purple/20 transition-colors duration-300">
-                      {feature.icon}
-                    </div>
-                    <h3 className="text-lg font-semibold">{feature.title}</h3>
-                  </div>
-                  <p className="text-gray-600 text-sm">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {features.slice(4, 6).map((feature, index) => (
+          
+          {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="bg-white hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100/60 group"
+              className="bg-white hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100/60 group h-full"
             >
-              <CardContent className="p-5">
+              <CardContent className="p-5 flex flex-col h-full">
                 <div className="mb-3 flex items-center gap-2">
                   <div className="p-2 rounded-lg bg-opta-purple/10 group-hover:bg-opta-purple/20 transition-colors duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="text-lg font-semibold">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
+                <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm flex-grow">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
