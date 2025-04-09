@@ -7,7 +7,6 @@ import FeatureSection from '@/components/FeatureSection';
 import DemoSection from '@/components/DemoSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import ContactForm from '@/components/ContactForm';
-import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -19,7 +18,6 @@ const Index = () => {
       <FeatureSection />
       <DemoSection />
       <BenefitsSection />
-      <CallToAction />
       <ContactForm />
       <Footer />
     </div>
