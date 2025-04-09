@@ -1,35 +1,35 @@
 
 import React from 'react';
-import { MessageSquare, Filter, Search, History, UserCircle, FileText } from 'lucide-react';
+import { MessageSquare, Filter, Search, Clock, User, FileText } from 'lucide-react';
 
 const features = [
   {
-    icon: <MessageSquare className="h-8 w-8 text-primary-600" />,
+    icon: <MessageSquare className="h-8 w-8 text-opta-purple" />,
     title: 'Interfaz Conversacional',
     description: 'Interactúa de forma natural a través de una interfaz de chat intuitiva que facilita la comunicación.'
   },
   {
-    icon: <Filter className="h-8 w-8 text-primary-600" />,
+    icon: <Filter className="h-8 w-8 text-opta-purple" />,
     title: 'Sistema de Filtros Dinámicos',
     description: 'Navega por categorías y opciones que se adaptan según tus selecciones previas.'
   },
   {
-    icon: <Search className="h-8 w-8 text-primary-600" />,
+    icon: <Search className="h-8 w-8 text-opta-purple" />,
     title: 'Búsqueda por Palabras Clave',
     description: 'Encuentra rápidamente documentos y respuestas mediante búsquedas precisas por palabras clave.'
   },
   {
-    icon: <FileText className="h-8 w-8 text-primary-600" />,
+    icon: <FileText className="h-8 w-8 text-opta-purple" />,
     title: 'Respuestas Enriquecidas',
     description: 'Visualiza respuestas con formato enriquecido, incluyendo imágenes y texto con estilo.'
   },
   {
-    icon: <History className="h-8 w-8 text-primary-600" />,
+    icon: <Clock className="h-8 w-8 text-opta-purple" />,
     title: 'Historial de Consultas',
     description: 'Accede a tu historial completo de interacciones con fecha y hora para recapitular tu gestión.'
   },
   {
-    icon: <UserCircle className="h-8 w-8 text-primary-600" />,
+    icon: <User className="h-8 w-8 text-opta-purple" />,
     title: 'Perfiles Personalizados',
     description: 'Gestiona tu perfil con distintos niveles de acceso según tus necesidades.'
   }

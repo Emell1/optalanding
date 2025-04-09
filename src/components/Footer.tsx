@@ -7,7 +7,14 @@ const Footer: React.FC = () => {
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 gradient-text">OPTA</h3>
+            <div className="flex mb-4">
+              <div className="bg-opta-purple p-2 flex items-center justify-center w-10 h-10">
+                <span className="text-white text-lg font-light">[/]</span>
+              </div>
+              <div className="bg-white p-2 flex items-center justify-center w-24 h-10">
+                <span className="text-opta-black text-lg font-bold">OPTA</span>
+              </div>
+            </div>
             <p className="text-gray-400 mb-4">
               El optimizador de procesos, tareas y aprendizaje que transformará tu organización.
             </p>

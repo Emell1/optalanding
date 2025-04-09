@@ -14,10 +14,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 265 70% 52%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 175 84% 32%;
+    --secondary: 240 60% 50%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
@@ -31,7 +31,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
+    --ring: 265 70% 52%;
 
     --radius: 0.5rem;
 
@@ -55,8 +55,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 265 70% 52%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -104,9 +104,33 @@
 }
 
 .gradient-bg {
-  @apply bg-gradient-to-r from-primary-600 to-secondary-600;
+  @apply bg-gradient-to-r from-opta-purple to-opta-purple-dark;
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-opta-purple to-opta-purple-dark;
+}
+
+.opta-search-input {
+  @apply bg-white border border-gray-200 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-opta-purple;
+}
+
+.opta-button {
+  @apply bg-opta-purple text-white rounded-lg px-4 py-2 hover:bg-opta-purple-dark transition-colors;
+}
+
+.opta-button-outline {
+  @apply border border-opta-purple text-opta-purple rounded-lg px-4 py-2 hover:bg-opta-purple/10 transition-colors;
+}
+
+.opta-button-white {
+  @apply bg-white text-opta-purple rounded-lg px-4 py-2 hover:bg-gray-100 transition-colors;
+}
+
+.opta-button-secondary {
+  @apply bg-opta-gray-light text-gray-700 rounded-lg px-4 py-2 hover:bg-gray-200 transition-colors;
+}
+
+.opta-card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-100 p-6;
 }

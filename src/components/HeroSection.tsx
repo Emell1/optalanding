@@ -16,45 +16,82 @@ const HeroSection: React.FC = () => {
               OPTA es una plataforma de conversación inteligente que simplifica el acceso a la información y optimiza tus procesos de trabajo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Button className="gradient-bg px-8 py-6 text-lg">Comenzar Ahora</Button>
-              <Button variant="outline" className="px-8 py-6 text-lg">Ver Demostración</Button>
+              <Button className="bg-opta-purple hover:bg-opta-purple-dark px-8 py-6 text-lg">Comenzar Ahora</Button>
+              <Button variant="outline" className="border-opta-purple text-opta-purple hover:bg-opta-purple/10 px-8 py-6 text-lg">Ver Demostración</Button>
             </div>
           </div>
           <div className="w-full md:w-1/2 relative">
             <div className="bg-white rounded-xl shadow-xl p-4 md:p-6 border border-gray-200 animate-fade-in">
               <div className="flex justify-between items-center mb-4 border-b pb-4">
-                <div className="flex items-center text-primary-600">
-                  <MessageSquare className="mr-2" size={20} />
-                  <span className="font-medium">Nueva conversación</span>
+                <div className="flex items-center">
+                  <Button className="bg-opta-purple text-white rounded-md hover:bg-opta-purple-dark">
+                    Nueva Conversación
+                  </Button>
                 </div>
                 <div className="flex space-x-2">
-                  <button className="p-2 rounded-full hover:bg-gray-100 text-gray-700">
-                    <FileText size={18} />
+                  <button className="p-2 rounded-full hover:bg-gray-100 text-opta-purple">
+                    <Clock size={18} />
                   </button>
-                  <button className="p-2 rounded-full hover:bg-gray-100 text-gray-700">
-                    <Filter size={18} />
+                  <button className="p-2 rounded-full hover:bg-gray-100 text-opta-purple">
+                    <User size={18} />
                   </button>
                 </div>
               </div>
-              <div className="h-64 bg-gray-50 rounded-lg p-4 overflow-y-auto mb-4">
-                <div className="bg-primary-100 rounded-lg p-3 max-w-md ml-auto mb-4">
-                  <p className="text-gray-800">¿Cómo puedo optimizar mi proceso de atención al cliente?</p>
-                </div>
-                <div className="bg-white border border-gray-200 rounded-lg p-3 max-w-md mr-auto">
-                  <p className="text-gray-800">Aquí tienes algunas recomendaciones para optimizar tu proceso de atención al cliente:</p>
-                  <ul className="list-disc pl-5 mt-2 text-gray-700 text-sm">
-                    <li>Implementar un sistema de tickets</li>
-                    <li>Establecer SLAs claros</li>
-                    <li>Automatizar respuestas a preguntas frecuentes</li>
-                  </ul>
+              
+              <div className="italic text-gray-700 mb-2">Consulta: Test</div>
+              
+              <div className="bg-white rounded-lg p-3 mb-4">
+                <h3 className="text-opta-purple font-medium">Documentos encontrados</h3>
+                <p className="text-gray-700">Estos son los documentos encontrados con tu búsqueda</p>
+                
+                <div className="flex flex-wrap gap-6 mt-4">
+                  <div className="flex flex-col items-center">
+                    <div className="text-opta-purple mb-1">.PDF</div>
+                    <div className="w-16 h-16 border-2 border-opta-purple rounded-md flex items-center justify-center">
+                      <FileText className="w-10 h-10 text-opta-purple" />
+                    </div>
+                    <span className="mt-1 text-sm">test 1</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center">
+                    <div className="text-opta-purple mb-1">.PDF</div>
+                    <div className="w-16 h-16 border-2 border-opta-purple rounded-md flex items-center justify-center">
+                      <FileText className="w-10 h-10 text-opta-purple" />
+                    </div>
+                    <span className="mt-1 text-sm">libro</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center">
+                    <div className="text-opta-purple mb-1">.PDF</div>
+                    <div className="w-16 h-16 border-2 border-opta-purple rounded-md flex items-center justify-center">
+                      <FileText className="w-10 h-10 text-opta-purple" />
+                    </div>
+                    <span className="mt-1 text-sm">test 99</span>
+                  </div>
                 </div>
               </div>
+              
+              <div className="flex flex-wrap gap-2 mb-4">
+                <button className="text-sm border border-opta-purple text-opta-purple rounded-full px-4 py-1">
+                  Innovación como motor de cambio
+                </button>
+                <button className="text-sm border border-opta-purple text-opta-purple rounded-full px-4 py-1">
+                  Compromiso con la eficiencia
+                </button>
+                <button className="text-sm border border-opta-purple text-opta-purple rounded-full px-4 py-1">
+                  Resultados medibles y sostenibles
+                </button>
+              </div>
+              
               <div className="flex items-center space-x-2 border-t pt-4">
-                <div className="flex space-x-2 overflow-x-auto pb-2">
-                  <Button variant="outline" size="sm">Más detalles</Button>
-                  <Button variant="outline" size="sm">Ejemplos</Button>
-                  <Button variant="outline" size="sm">Métricas</Button>
-                </div>
+                <input 
+                  type="text" 
+                  placeholder="Escribe palabras clave para buscar archivos" 
+                  className="opta-search-input flex-grow"
+                />
+                <Button className="bg-opta-purple hover:bg-opta-purple-dark">
+                  Consultar
+                </Button>
               </div>
             </div>
           </div>

@@ -38,11 +38,11 @@ const BenefitsSection: React.FC = () => {
               className="rounded-lg p-6 bg-gray-50 border border-gray-100"
             >
               <div className="flex justify-center mb-6">
-                <div className="h-48 w-48 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+                <div className="h-24 w-24 rounded-full bg-opta-purple/20 flex items-center justify-center overflow-hidden">
                   <img 
                     src={benefit.image} 
                     alt={benefit.title} 
-                    className="object-cover h-full w-full" 
+                    className="object-cover h-16 w-16" 
                   />
                 </div>
               </div>
@@ -57,7 +57,7 @@ const BenefitsSection: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="h-6 w-6 text-opta-purple mr-3 flex-shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-semibold text-lg mb-1">Ahorro de tiempo</h4>
                 <p className="text-gray-600">Reducción del 40% en tiempo dedicado a búsqueda de información</p>
@@ -65,7 +65,7 @@ const BenefitsSection: React.FC = () => {
             </div>
             
             <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="h-6 w-6 text-opta-purple mr-3 flex-shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-semibold text-lg mb-1">Mejora en satisfacción</h4>
                 <p className="text-gray-600">Aumento del 35% en índices de satisfacción de usuarios</p>
@@ -73,7 +73,7 @@ const BenefitsSection: React.FC = () => {
             </div>
             
             <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="h-6 w-6 text-opta-purple mr-3 flex-shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-semibold text-lg mb-1">Optimización de procesos</h4>
                 <p className="text-gray-600">Reducción del 25% en errores de procedimiento</p>
@@ -81,7 +81,7 @@ const BenefitsSection: React.FC = () => {
             </div>
             
             <div className="flex items-start">
-              <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="h-6 w-6 text-opta-purple mr-3 flex-shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-semibold text-lg mb-1">ROI positivo</h4>
                 <p className="text-gray-600">Retorno de inversión promedio en menos de 6 meses</p>
