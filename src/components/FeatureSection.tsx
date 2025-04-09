@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Filter, MessageSquare, Search, BarChart3, Lock, Settings } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -48,15 +47,15 @@ const FeatureSection: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-3 rounded-xl overflow-hidden shadow-xl h-[400px]">
+          <div className="md:col-span-3 rounded-xl overflow-hidden shadow-xl h-[400px] relative">
             <img 
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
               alt="OPTA en acción" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-opta-purple/80 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-white text-2xl font-bold mb-2">Visualiza lo que OPTA puede hacer</h3>
-              <p className="text-white/90">Interfaz intuitiva que combina filtros dinámicos con respuestas conversacionales enriquecidas.</p>
+            <div className="absolute inset-0 bg-white/80 flex flex-col justify-end p-6">
+              <h3 className="text-2xl font-bold mb-2">Visualiza lo que OPTA puede hacer</h3>
+              <p className="text-gray-700">Interfaz intuitiva que combina filtros dinámicos con respuestas conversacionales enriquecidas.</p>
             </div>
           </div>
           

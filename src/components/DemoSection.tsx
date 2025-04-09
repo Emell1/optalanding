@@ -49,7 +49,7 @@ const DemoSection: React.FC = () => {
                 key={index} 
                 className="group h-full"
               >
-                <div className="relative overflow-hidden rounded-xl h-full bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" style={{height: "280px"}}>
                   <div className="p-6 flex flex-col h-full">
                     {/* Icono con efecto de gradiente */}
                     <div className="mb-4 p-3 inline-flex rounded-lg bg-gradient-to-br from-gray-100 to-white shadow-inner">
@@ -81,7 +81,7 @@ const DemoSection: React.FC = () => {
                 key={index + 3} 
                 className="group h-full"
               >
-                <div className="relative overflow-hidden rounded-xl h-full bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg" style={{height: "280px"}}>
                   <div className="p-6 flex flex-col h-full">
                     {/* Icono con efecto de gradiente */}
                     <div className="mb-4 p-3 inline-flex rounded-lg bg-gradient-to-br from-gray-100 to-white shadow-inner">
