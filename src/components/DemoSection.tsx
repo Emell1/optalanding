@@ -6,31 +6,26 @@ import { Button } from '@/components/ui/button';
 const metodologySteps = [
   {
     icon: <Search className="h-8 w-8 text-opta-purple" />,
-    image: "https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-2.png",
     title: "Diagnóstico inicial",
     description: "Analizamos tus procesos actuales, puntos críticos y oportunidades de mejora."
   },
   {
     icon: <MessageSquare className="h-8 w-8 text-opta-purple" />,
-    image: "https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-3.png",
     title: "Diseño conversacional",
     description: "Definimos cómo debe responder OPTA según tu lógica de negocio."
   },
   {
     icon: <Settings className="h-8 w-8 text-opta-purple" />,
-    image: "https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-4.png",
     title: "Configuración personalizada",
     description: "Creamos filtros, contenidos y niveles de respuesta adaptados a tu operación."
   },
   {
     icon: <Layers className="h-8 w-8 text-opta-purple" />,
-    image: "https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-5.png",
     title: "Implementación ágil",
     description: "Integramos la solución en tus sistemas y capacitamos a tu equipo."
   },
   {
     icon: <RefreshCw className="h-8 w-8 text-opta-purple" />,
-    image: "https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-5.png",
     title: "Mejora continua",
     description: "Seguimos ajustando y evolucionando OPTA con base en datos reales de uso y feedback."
   }
@@ -50,11 +45,6 @@ const DemoSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {metodologySteps.map((item, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <img 
-                src={item.image} 
-                alt={item.title} 
-                className="w-full h-auto" 
-              />
               <div className="p-6">
                 <div className="flex items-center mb-3">
                   <div className="mr-3">{item.icon}</div>

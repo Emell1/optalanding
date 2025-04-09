@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, Check, Repeat, CheckCircle2 } from 'lucide-react';
+import { TrendingUp, Check, Repeat, CheckCircle2, Users, Briefcase, Headphones, BookOpen } from 'lucide-react';
 
 const benefits = [
   {
@@ -22,19 +22,19 @@ const benefits = [
 
 const useCases = [
   {
-    icon: "🛒",
+    icon: <Users className="h-6 w-6 text-opta-purple" />,
     title: "Equipos comerciales que necesitan acceder a respuestas rápidas y coherentes"
   },
   {
-    icon: "👥",
+    icon: <Briefcase className="h-6 w-6 text-opta-purple" />,
     title: "Soporte interno de RRHH para onboarding y gestión de consultas"
   },
   {
-    icon: "🎯",
+    icon: <Headphones className="h-6 w-6 text-opta-purple" />,
     title: "Centros de atención con procesos repetitivos que requieren guía precisa"
   },
   {
-    icon: "📚",
+    icon: <BookOpen className="h-6 w-6 text-opta-purple" />,
     title: "Equipos de formación con recursos dispersos o poco estructurados"
   }
 ];
@@ -81,7 +81,9 @@ const BenefitsSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {useCases.map((useCase, index) => (
               <div key={index} className="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                <div className="text-3xl mr-3 flex-shrink-0">{useCase.icon}</div>
+                <div className="bg-opta-purple/10 p-3 rounded-full mr-3 flex-shrink-0">
+                  {useCase.icon}
+                </div>
                 <p className="text-lg text-gray-800">{useCase.title}</p>
               </div>
             ))}
