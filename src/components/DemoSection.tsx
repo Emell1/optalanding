@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, Settings, MessageSquare, Layers, RefreshCw, ArrowRight } from 'lucide-react';
+import { Search, Settings, MessageSquare, Layers, RefreshCw } from 'lucide-react';
 
 const metodologySteps = [
   {
@@ -26,13 +26,13 @@ const metodologySteps = [
   {
     icon: <RefreshCw className="h-8 w-8 text-white" />,
     title: "Mejora continua",
-    description: "Seguimos ajustando y evolucionando OPTA con base en datos reales de uso y feedback."
+    description: "Seguimos ajustando y evolucionando OPTA con base en datos reales."
   }
 ];
 
 const DemoSection: React.FC = () => {
   return (
-    <section id="demo" className="py-16">
+    <section id="demo" className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">De la idea a la solución: te acompañamos en cada paso</h2>
@@ -41,33 +41,45 @@ const DemoSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto mb-16">
-          {/* Línea conectora */}
-          <div className="absolute top-14 left-0 right-0 h-1 bg-gradient-to-r from-opta-purple to-opta-purple-dark z-0 hidden md:block"></div>
-          
-          {/* Pasos del proceso */}
-          <div className="flex flex-col md:flex-row gap-4 relative z-10">
-            {metodologySteps.map((step, index) => (
-              <div key={index} className="flex-1 flex flex-col items-center">
-                <div className="bg-gradient-to-r from-opta-purple to-opta-purple-dark rounded-full w-28 h-28 flex items-center justify-center mb-4 shadow-lg">
-                  {step.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-center mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-center text-sm">{step.description}</p>
-                
-                {/* Flechas conectoras (excepto último elemento) */}
-                {index < metodologySteps.length - 1 && (
-                  <div className="hidden md:flex absolute top-14 left-[calc(20%*1.5+10%*1.25)] transform -translate-x-1/2">
-                    <ArrowRight className="h-8 w-8 text-opta-purple-light" />
+        <div className="relative max-w-6xl mx-auto">
+          {/* Contenedor de proceso con línea de tiempo */}
+          <div className="relative pb-12">
+            {/* Línea de tiempo */}
+            <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-opta-purple-light via-opta-purple to-opta-purple-dark transform -translate-y-1/2 hidden md:block"></div>
+            
+            {/* Pasos del proceso */}
+            <div className="flex flex-col md:flex-row justify-between relative">
+              {metodologySteps.map((step, index) => (
+                <div key={index} className="flex flex-col items-center mb-12 md:mb-0 relative z-10">
+                  {/* Número de paso */}
+                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-opta-purple-light font-bold text-5xl opacity-20">
+                    {index + 1}
                   </div>
-                )}
-              </div>
-            ))}
+                  
+                  {/* Círculo con icono */}
+                  <div className={`w-28 h-28 rounded-full flex items-center justify-center shadow-lg mb-4 
+                    ${index % 2 === 0 ? 'bg-gradient-to-br from-opta-purple to-opta-purple-dark' : 'bg-gradient-to-br from-opta-purple-dark to-opta-purple'}`}>
+                    {step.icon}
+                  </div>
+                  
+                  {/* Contenido del paso */}
+                  <div className="max-w-[180px] text-center mt-4">
+                    <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+                    <p className="text-gray-600 text-sm">{step.description}</p>
+                  </div>
+                  
+                  {/* Líneas conectoras entre pasos (solo en móvil) */}
+                  {index < metodologySteps.length - 1 && (
+                    <div className="h-10 w-0.5 bg-gradient-to-b from-opta-purple to-opta-purple-light my-2 md:hidden"></div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         
         <div className="mt-12 text-center">
-          <button className="bg-opta-purple hover:bg-opta-purple-dark text-white px-8 py-6 rounded-lg text-lg font-medium transition-colors">
+          <button className="bg-gradient-to-r from-opta-purple to-opta-purple-dark hover:from-opta-purple-dark hover:to-opta-purple text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
             Comienza tu proceso de diagnóstico
           </button>
         </div>

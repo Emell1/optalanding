@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Filter, MessageSquare, Search, BarChart3, Lock, Settings } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
   {
@@ -37,7 +38,7 @@ const features = [
 
 const FeatureSection: React.FC = () => {
   return (
-    <section id="features" className="py-16 bg-gray-50">
+    <section id="features" className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Una herramienta poderosa, diseñada a tu medida</h2>
@@ -46,52 +47,58 @@ const FeatureSection: React.FC = () => {
           </p>
         </div>
         
-        <div className="flex flex-col lg:flex-row gap-8 mb-12">
-          <div className="lg:w-1/2">
-            <div className="relative rounded-xl overflow-hidden shadow-xl h-[400px]">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                alt="OPTA en acción" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                <h3 className="text-white text-2xl font-bold mb-2">Visualiza lo que OPTA puede hacer</h3>
-                <p className="text-white/90">Interfaz intuitiva que combina filtros dinámicos con respuestas conversacionales enriquecidas.</p>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="relative rounded-xl overflow-hidden shadow-xl h-[400px] col-span-1 row-span-2">
+            <img 
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+              alt="OPTA en acción" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-opta-purple/80 to-transparent flex flex-col justify-end p-6">
+              <h3 className="text-white text-2xl font-bold mb-2">Visualiza lo que OPTA puede hacer</h3>
+              <p className="text-white/90">Interfaz intuitiva que combina filtros dinámicos con respuestas conversacionales enriquecidas.</p>
             </div>
           </div>
-          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {features.slice(0, 4).map((feature, index) => (
-              <div 
+              <Card 
                 key={index} 
-                className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col"
+                className="bg-white hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100/60 group"
               >
-                <div className="mb-3 flex items-center gap-2">
-                  {feature.icon}
-                  <h3 className="text-lg font-semibold">{feature.title}</h3>
-                </div>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
-              </div>
+                <CardContent className="p-5">
+                  <div className="mb-3 flex items-center gap-2">
+                    <div className="p-2 rounded-lg bg-opta-purple/10 group-hover:bg-opta-purple/20 transition-colors duration-300">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold">{feature.title}</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
           {features.slice(4, 6).map((feature, index) => (
-            <div 
+            <Card 
               key={index} 
-              className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col"
+              className="bg-white hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100/60 group"
             >
-              <div className="mb-3 flex items-center gap-2">
-                {feature.icon}
-                <h3 className="text-lg font-semibold">{feature.title}</h3>
-              </div>
-              <p className="text-gray-600 text-sm">{feature.description}</p>
-            </div>
+              <CardContent className="p-5">
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="p-2 rounded-lg bg-opta-purple/10 group-hover:bg-opta-purple/20 transition-colors duration-300">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold">{feature.title}</h3>
+                </div>
+                <p className="text-gray-600 text-sm">{feature.description}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
         
-        <div className="mt-16 bg-gradient-to-r from-opta-purple to-opta-purple-dark rounded-xl overflow-hidden shadow-lg">
+        <div className="mt-16 bg-gradient-to-r from-opta-purple-dark via-opta-purple to-opta-purple-light rounded-xl overflow-hidden shadow-lg">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 p-8 flex flex-col justify-center">
               <h3 className="text-white text-2xl font-bold mb-4">¿Listo para dar el siguiente paso?</h3>
@@ -102,19 +109,19 @@ const FeatureSection: React.FC = () => {
                 Solicitar una demo
               </button>
             </div>
-            <div className="md:w-1/2 bg-white/10 p-4">
-              <div className="bg-white/5 border border-white/20 rounded-lg p-4 backdrop-blur-sm">
-                <ul className="space-y-3">
+            <div className="md:w-1/2 bg-white/10 p-6">
+              <div className="bg-white/5 border border-white/20 rounded-lg p-6 backdrop-blur-sm h-full">
+                <ul className="space-y-4">
                   <li className="flex items-center text-white">
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3">✓</div>
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3 shrink-0">✓</div>
                     <span>Diagnóstico personalizado de tus procesos</span>
                   </li>
                   <li className="flex items-center text-white">
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3">✓</div>
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3 shrink-0">✓</div>
                     <span>Implementación adaptada a tu negocio</span>
                   </li>
                   <li className="flex items-center text-white">
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3">✓</div>
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3 shrink-0">✓</div>
                     <span>Acompañamiento continuo post-implementación</span>
                   </li>
                 </ul>
