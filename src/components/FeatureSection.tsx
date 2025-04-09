@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MessageSquare, Filter, Search, Clock, User, FileText, Settings } from 'lucide-react';
+import { MessageSquare, Filter, Search, FileText } from 'lucide-react';
 
 const features = [
   {
@@ -22,16 +22,6 @@ const features = [
     icon: <Search className="h-8 w-8 text-opta-purple" />,
     title: 'Búsqueda priorizada',
     description: 'Encuentra información por palabras clave con lógica de prioridades integrada.'
-  },
-  {
-    icon: <Clock className="h-8 w-8 text-opta-purple" />,
-    title: 'Registro de historial',
-    description: 'Métricas detalladas y seguimiento de todas las interacciones por usuario.'
-  },
-  {
-    icon: <Settings className="h-8 w-8 text-opta-purple" />,
-    title: 'Panel administrador',
-    description: 'Gestión avanzada de contenidos, perfiles y permisos totalmente personalizable.'
   }
 ];
 
@@ -61,7 +51,7 @@ const FeatureSection: React.FC = () => {
             </div>
           </div>
           <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
-            {features.slice(0, 4).map((feature, index) => (
+            {features.map((feature, index) => (
               <div 
                 key={index} 
                 className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col"
@@ -74,23 +64,6 @@ const FeatureSection: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {features.slice(4, 6).map((feature, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex items-start"
-            >
-              <div className="bg-purple-50 p-3 rounded-full mr-4">
-                {feature.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            </div>
-          ))}
         </div>
         
         <div className="mt-16 bg-gradient-to-r from-opta-purple to-opta-purple-dark rounded-xl overflow-hidden shadow-lg">

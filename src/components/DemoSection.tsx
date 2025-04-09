@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, Settings, MessageSquare, Layers, FileText } from 'lucide-react';
+import { Search, Settings, MessageSquare, Layers, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const metodologySteps = [
@@ -27,6 +27,12 @@ const metodologySteps = [
     image: "https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-5.png",
     title: "Implementación ágil",
     description: "Integramos la solución en tus sistemas y capacitamos a tu equipo."
+  },
+  {
+    icon: <RefreshCw className="h-8 w-8 text-opta-purple" />,
+    image: "https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-5.png",
+    title: "Mejora continua",
+    description: "Seguimos ajustando y evolucionando OPTA con base en datos reales de uso y feedback."
   }
 ];
 
@@ -41,7 +47,7 @@ const DemoSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {metodologySteps.map((item, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
@@ -58,16 +64,6 @@ const DemoSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="bg-gray-50 rounded-xl p-8 mt-12 max-w-4xl mx-auto">
-          <div className="flex items-start">
-            <div className="text-3xl mr-3 flex-shrink-0">🔄</div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Mejora continua</h3>
-              <p className="text-gray-600">Seguimos ajustando y evolucionando OPTA con base en datos reales de uso y feedback.</p>
-            </div>
-          </div>
         </div>
         
         <div className="mt-12 text-center">
