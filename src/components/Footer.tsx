@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Footer: React.FC = () => {
@@ -9,7 +8,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="/opta-logo.png" 
+                src="https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-logo.png" 
                 alt="Logo de OPTA" 
                 className="h-12" 
               />

@@ -18,7 +18,7 @@ const DemoSection: React.FC = () => {
           <div className="flex flex-col gap-6">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="/opta-screenshot-2.png" 
+                src="https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-2.png" 
                 alt="Dashboard de OPTA" 
                 className="w-full h-auto" 
               />
@@ -30,7 +30,7 @@ const DemoSection: React.FC = () => {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="/opta-screenshot-3.png" 
+                src="https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-3.png" 
                 alt="Interfaz de chat de OPTA" 
                 className="w-full h-auto" 
               />
@@ -44,7 +44,7 @@ const DemoSection: React.FC = () => {
           <div className="flex flex-col gap-6">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="/opta-screenshot-4.png" 
+                src="https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-4.png" 
                 alt="Búsqueda avanzada en OPTA" 
                 className="w-full h-auto" 
               />
@@ -56,7 +56,7 @@ const DemoSection: React.FC = () => {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="/opta-screenshot-5.png" 
+                src="https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-5.png" 
                 alt="Análisis de datos en OPTA" 
                 className="w-full h-auto" 
               />
