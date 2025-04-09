@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Search, Settings, MessageSquare, Layers, RefreshCw } from 'lucide-react';
-import { Card } from '@/components/ui/card';
 
 const metodologySteps = [
   {
@@ -42,42 +41,73 @@ const DemoSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          {metodologySteps.map((step, index) => (
-            <div 
-              key={index} 
-              className="group"
-            >
-              {/* Tarjeta con diseño único para la metodología */}
-              <div className="relative overflow-hidden rounded-xl h-full bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
-                
-                {/* Número de fase como círculo decorativo */}
-                <div className="absolute -right-4 -top-4 bg-gradient-to-br from-opta-purple-light/20 to-opta-purple-light/10 w-16 h-16 rounded-full flex items-center justify-center">
-                  <span className="text-opta-purple text-lg font-bold relative top-2 right-2">{index + 1}</span>
-                </div>
-                
-                <div className="p-6 flex flex-col h-full">
-                  {/* Icono con efecto de gradiente */}
-                  <div className="mb-4 p-3 inline-flex rounded-lg bg-gradient-to-br from-gray-100 to-white shadow-inner">
-                    {step.icon}
-                  </div>
-                  
-                  {/* Contenido */}
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-opta-purple transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600">
-                    {step.description}
-                  </p>
-                  
-                  {/* Línea decorativa */}
-                  <div className="mt-auto pt-4">
-                    <div className="h-1 w-12 bg-gradient-to-r from-opta-purple-light to-transparent rounded-full"></div>
+        {/* Modified grid layout - first 3 cards in top row, last 2 cards centered in bottom row */}
+        <div className="max-w-6xl mx-auto">
+          {/* Top row with first 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {metodologySteps.slice(0, 3).map((step, index) => (
+              <div 
+                key={index} 
+                className="group"
+              >
+                {/* Tarjeta con diseño único para la metodología (sin números) */}
+                <div className="relative overflow-hidden rounded-xl h-full bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                  <div className="p-6 flex flex-col h-full">
+                    {/* Icono con efecto de gradiente */}
+                    <div className="mb-4 p-3 inline-flex rounded-lg bg-gradient-to-br from-gray-100 to-white shadow-inner">
+                      {step.icon}
+                    </div>
+                    
+                    {/* Contenido */}
+                    <h3 className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-opta-purple transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {step.description}
+                    </p>
+                    
+                    {/* Línea decorativa */}
+                    <div className="mt-auto pt-4">
+                      <div className="h-1 w-12 bg-gradient-to-r from-opta-purple-light to-transparent rounded-full"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          {/* Bottom row with last 2 cards, centered */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {metodologySteps.slice(3).map((step, index) => (
+              <div 
+                key={index + 3} 
+                className="group"
+              >
+                {/* Tarjeta con diseño único para la metodología (sin números) */}
+                <div className="relative overflow-hidden rounded-xl h-full bg-gradient-to-br from-white to-gray-50 border-b-4 border-opta-purple-light shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                  <div className="p-6 flex flex-col h-full">
+                    {/* Icono con efecto de gradiente */}
+                    <div className="mb-4 p-3 inline-flex rounded-lg bg-gradient-to-br from-gray-100 to-white shadow-inner">
+                      {step.icon}
+                    </div>
+                    
+                    {/* Contenido */}
+                    <h3 className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-opta-purple transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {step.description}
+                    </p>
+                    
+                    {/* Línea decorativa */}
+                    <div className="mt-auto pt-4">
+                      <div className="h-1 w-12 bg-gradient-to-r from-opta-purple-light to-transparent rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="mt-16 text-center">
