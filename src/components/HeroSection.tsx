@@ -12,6 +12,8 @@ const HeroSection: React.FC = () => {
       if (scrollAnimationRef.current) {
         cancelAnimationFrame(scrollAnimationRef.current);
         document.removeEventListener('click', stopAutoScroll);
+        window.removeEventListener('wheel', stopAutoScroll);
+        window.removeEventListener('touchmove', stopAutoScroll);
       }
     };
   }, []);
@@ -34,8 +36,10 @@ const HeroSection: React.FC = () => {
     const distance = targetPosition - startPosition;
     const duration = 55688; // 10% más lento que 50625 (50625 * 1.1 = 55688 ms)
     
-    // Add event listener to stop scrolling on click
+    // Add event listeners to stop scrolling on click or manual scroll
     document.addEventListener('click', stopAutoScroll);
+    window.addEventListener('wheel', stopAutoScroll);
+    window.addEventListener('touchmove', stopAutoScroll);
     
     // Initial immediate scroll to show action
     window.scrollTo({
@@ -87,8 +91,10 @@ const HeroSection: React.FC = () => {
       cancelAnimationFrame(scrollAnimationRef.current);
       scrollAnimationRef.current = null;
       
-      // Remove the click event listener
+      // Remove all event listeners
       document.removeEventListener('click', stopAutoScroll);
+      window.removeEventListener('wheel', stopAutoScroll);
+      window.removeEventListener('touchmove', stopAutoScroll);
       
       console.log("Auto scroll stopped");
     }
