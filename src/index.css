@@ -109,6 +109,7 @@
 
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-opta-purple to-opta-purple-dark;
+  padding: 0 5px;
 }
 
 .opta-search-input {
