@@ -14,6 +14,9 @@ const formSchema = z.object({
   email: z.string().email({ message: 'Por favor, introduce un email válido' }),
   company: z.string().optional(),
   message: z.string().min(10, { message: 'El mensaje debe tener al menos 10 caracteres' }),
+  api_key: z.string().optional(),
+  user: z.string().optional(),
+  redirect: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -27,19 +30,54 @@ const ContactForm: React.FC = () => {
       email: '',
       company: '',
       message: '',
+      api_key: 'v0gp3aG2l54C6pY9WAj0dP',
+      user: 'OptaLanding',
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log('Form data:', data);
-    // Here you would typically send the data to your backend
-    
+  const onSubmit = async (data: FormValues) => {
+    // Convertir los datos en formato x-www-form-urlencoded
+    const formBody = new URLSearchParams();
+    for (const [key, value] of Object.entries(data)) {
+      if (value !== undefined) {
+        formBody.append(key, value);
+      }
+    }
+
     toast({
-      title: "Mensaje enviado",
-      description: "Nos pondremos en contacto contigo pronto. ¡Gracias!",
+      title: "Enviando mensaje...",
+      description: "Espera un momento mientras procesamos tu solicitud.",
     });
-    
-    form.reset();
+  
+    try {
+        const response = await fetch('https://services.darideveloper.com/contact-form/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
+      });
+  
+      if (response.ok) {
+        toast({
+          title: "Mensaje enviado",
+          description: "Nos pondremos en contacto contigo pronto. ¡Gracias!",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: "Hubo un problema al enviar tu mensaje. Intenta de nuevo.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error de red",
+        description: "No se pudo conectar con el servidor. Intenta más tarde.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -55,6 +93,7 @@ const ContactForm: React.FC = () => {
         <div className="max-w-xl mx-auto">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+
               <FormField
                 control={form.control}
                 name="name"
