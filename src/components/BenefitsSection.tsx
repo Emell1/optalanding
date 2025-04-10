@@ -116,7 +116,7 @@ const BenefitsSection: React.FC = () => {
                     <p className="text-gray-500 text-sm">{useCase.description}</p>
                   </div>
                   <div className="text-opta-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
-                    <ArrowRight size={20} />
+                    <MdArrowForward size={20} />
                   </div>
                 </div>
               </div>
