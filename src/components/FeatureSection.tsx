@@ -78,7 +78,7 @@ const FeatureSection: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-16 bg-gradient-to-r from-opta-purple-dark via-opta-purple to-opta-purple-light rounded-xl overflow-hidden shadow-lg">
+        <div id="demo" className="mt-16 bg-gradient-to-r from-opta-purple-dark via-opta-purple to-opta-purple-light rounded-xl overflow-hidden shadow-lg">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 p-8 flex flex-col justify-center">
               <h3 className="text-white text-2xl font-bold mb-4">¿Listo para dar el siguiente paso?</h3>

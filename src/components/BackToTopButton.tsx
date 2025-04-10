@@ -4,16 +4,17 @@ import { ChevronUp } from 'lucide-react';
 
 const BackToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [sections, setSections] = useState<HTMLElement[]>([]);
+  const [sectionIds, setSectionIds] = useState<string[]>([]);
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
   useEffect(() => {
-    // Get all section elements
-    const sectionElements = Array.from(document.querySelectorAll('section')) as HTMLElement[];
-    setSections(sectionElements);
+    // Define the sections in order
+    const orderedSectionIds = ['home', 'features', 'demo', 'benefits', 'contact'];
+    setSectionIds(orderedSectionIds);
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
+      const headerOffset = 80; // Approximate header height
       
       // Show button when scrolled past the first section
       if (scrollPosition > window.innerHeight * 0.5) {
@@ -23,8 +24,9 @@ const BackToTopButton: React.FC = () => {
       }
 
       // Determine current section
-      for (let i = sectionElements.length - 1; i >= 0; i--) {
-        if (scrollPosition >= sectionElements[i].offsetTop - 200) {
+      for (let i = orderedSectionIds.length - 1; i >= 0; i--) {
+        const section = document.getElementById(orderedSectionIds[i]);
+        if (section && scrollPosition >= section.offsetTop - headerOffset - 100) {
           setCurrentSectionIndex(i);
           break;
         }
@@ -43,13 +45,19 @@ const BackToTopButton: React.FC = () => {
 
   const scrollToPreviousSection = () => {
     const targetIndex = Math.max(currentSectionIndex - 1, 0);
-    if (sections[targetIndex]) {
-      const targetPosition = sections[targetIndex].offsetTop;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+    const targetSectionId = sectionIds[targetIndex];
+    
+    if (targetSectionId) {
+      const section = document.getElementById(targetSectionId);
+      if (section) {
+        const headerOffset = 80; // Approximate header height
+        const targetPosition = section.offsetTop - headerOffset;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 

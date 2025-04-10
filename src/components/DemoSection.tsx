@@ -32,7 +32,7 @@ const metodologySteps = [
 
 const DemoSection: React.FC = () => {
   return (
-    <section id="demo" className="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <section id="benefits" className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">De la idea a la solución: te acompañamos en cada paso</h2>

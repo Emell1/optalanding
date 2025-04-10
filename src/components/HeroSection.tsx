@@ -95,7 +95,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-24">
+    <section id="home" className="py-16 md:py-24">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="w-full md:w-1/2 space-y-6 animate-fade-in">
