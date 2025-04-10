@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
-    <nav className="py-4 border-b border-gray-100">
+    <nav className="py-4 border-b border-gray-100 fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       <div className="container px-4 mx-auto flex items-center justify-between">
         <div className="flex items-center">
           <img 
