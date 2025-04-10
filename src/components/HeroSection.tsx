@@ -1,66 +1,89 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Play } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
-  const scrollIntervalRef = useRef<number | null>(null);
+  const scrollAnimationRef = useRef<number | null>(null);
 
-  const startAutoScroll = () => {
-    // Detener cualquier scroll previo
-    if (scrollIntervalRef.current) {
-      clearInterval(scrollIntervalRef.current);
-    }
+  // Cleanup function to remove event listeners and animation frames when component unmounts
+  useEffect(() => {
+    return () => {
+      if (scrollAnimationRef.current) {
+        cancelAnimationFrame(scrollAnimationRef.current);
+        document.removeEventListener('click', stopAutoScroll);
+      }
+    };
+  }, []);
 
-    // Obtener la posición del elemento de contacto
+  const startAutoScroll = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent immediate cancellation
+    
+    // Stop any existing scroll animation
+    stopAutoScroll();
+    
+    // Find the contact section
     const contactElement = document.getElementById('contact');
-    if (!contactElement) return;
+    if (!contactElement) {
+      console.error("Contact element not found");
+      return;
+    }
     
     const targetPosition = contactElement.offsetTop;
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
-    const duration = 15000; // 15 segundos para el scroll
-    const scrollStep = 10; // Intervalo en ms para cada paso
-    
+    const duration = 15000; // 15 seconds of scrolling
     let startTime: number | null = null;
-
-    // Función para manejar cada paso del scroll
+    
+    // Add event listener to stop scrolling on click
+    document.addEventListener('click', stopAutoScroll);
+    
+    // Animation function
     const animateScroll = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
       
-      // Calcular la nueva posición con una función de easing
-      const progress = Math.min(elapsed / duration, 1);
-      const easeInOutCubic = progress < 0.5 
-        ? 4 * progress * progress * progress 
-        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-      
-      const newPosition = startPosition + distance * easeInOutCubic;
-      
-      window.scrollTo(0, newPosition);
-      
-      // Continuar la animación si no ha terminado
       if (elapsed < duration) {
-        scrollIntervalRef.current = window.requestAnimationFrame(animateScroll);
+        // Calculate progress with easing
+        const progress = elapsed / duration;
+        const easeInOutCubic = progress < 0.5 
+          ? 4 * progress * progress * progress 
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+        // Calculate new position
+        const newPosition = startPosition + distance * easeInOutCubic;
+        
+        // Perform the scroll
+        window.scrollTo({
+          top: newPosition,
+          behavior: 'auto' // Use auto instead of smooth for consistent animation
+        });
+        
+        // Continue animation
+        scrollAnimationRef.current = requestAnimationFrame(animateScroll);
+      } else {
+        // Animation complete
+        stopAutoScroll();
       }
     };
     
-    // Iniciar la animación
-    scrollIntervalRef.current = window.requestAnimationFrame(animateScroll);
+    // Start the animation
+    scrollAnimationRef.current = requestAnimationFrame(animateScroll);
     
-    // Agregar un event listener para detener el scroll al hacer clic
-    document.addEventListener('click', stopAutoScroll);
+    // Add a console log to confirm the function was called
+    console.log("Auto scroll started", { startPosition, targetPosition, distance });
   };
 
   const stopAutoScroll = () => {
-    if (scrollIntervalRef.current) {
-      if (typeof scrollIntervalRef.current === 'number') {
-        window.cancelAnimationFrame(scrollIntervalRef.current);
-      }
-      scrollIntervalRef.current = null;
+    // Cancel any ongoing animation
+    if (scrollAnimationRef.current) {
+      cancelAnimationFrame(scrollAnimationRef.current);
+      scrollAnimationRef.current = null;
       
-      // Eliminar el event listener
+      // Remove the click event listener
       document.removeEventListener('click', stopAutoScroll);
+      
+      console.log("Auto scroll stopped");
     }
   };
 
