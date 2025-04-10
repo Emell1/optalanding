@@ -32,13 +32,13 @@ const HeroSection: React.FC = () => {
     const targetPosition = contactElement.offsetTop;
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
-    const duration = 135000; // 135 seconds of scrolling (9x slower than original)
+    const duration = 101250; // Reducido un 25% de 135000 (101250 ms = 101.25 segundos)
     let startTime: number | null = null;
     
     // Add event listener to stop scrolling on click
     document.addEventListener('click', stopAutoScroll);
     
-    // Animation function
+    // Animation function with immediate start
     const animateScroll = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
@@ -67,11 +67,17 @@ const HeroSection: React.FC = () => {
       }
     };
     
-    // Start the animation
+    // Start the animation immediately
     scrollAnimationRef.current = requestAnimationFrame(animateScroll);
     
+    // First scroll to start the experience immediately
+    window.scrollTo({
+      top: startPosition + 1, // Just a small jump to show immediate action
+      behavior: 'auto'
+    });
+    
     // Add a console log to confirm the function was called
-    console.log("Auto scroll started", { startPosition, targetPosition, distance, duration: "135 seconds (9x slower than original)" });
+    console.log("Auto scroll started", { startPosition, targetPosition, distance, duration: "101.25 segundos (25% más rápido que antes)" });
   };
 
   const stopAutoScroll = () => {
