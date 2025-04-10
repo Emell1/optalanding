@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   MdTrendingUp, 
@@ -84,6 +85,7 @@ const BenefitsSection: React.FC = () => {
           <p className="text-center text-gray-700 mb-0">Lo que hoy es una solución puntual, mañana puede ser tu sistema operativo del conocimiento.</p>
         </div>
         
+        {/* Moved button to this position */}
         <div className="text-center mt-12 mb-16">
           <button 
             className="bg-gradient-to-r from-opta-purple to-opta-purple-dark hover:from-opta-purple-dark hover:to-opta-purple text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
@@ -114,7 +116,7 @@ const BenefitsSection: React.FC = () => {
                     <p className="text-gray-500 text-sm">{useCase.description}</p>
                   </div>
                   <div className="text-opta-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
-                    <MdArrowForward size={20} />
+                    <ArrowRight size={20} />
                   </div>
                 </div>
               </div>
