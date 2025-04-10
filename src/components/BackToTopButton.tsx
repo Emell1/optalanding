@@ -9,7 +9,7 @@ const BackToTopButton: React.FC = () => {
 
   useEffect(() => {
     // Define the sections in order
-    const orderedSectionIds = ['home', 'features', 'demo', 'benefits', 'contact'];
+    const orderedSectionIds = ['home', 'features', 'demo', 'benefits', 'use-cases', 'contact'];
     setSectionIds(orderedSectionIds);
 
     const handleScroll = () => {

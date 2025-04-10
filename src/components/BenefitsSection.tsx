@@ -86,7 +86,7 @@ const BenefitsSection: React.FC = () => {
           </button>
         </div>
         
-        <div className="max-w-5xl mx-auto">
+        <div id="use-cases" className="max-w-5xl mx-auto">
           <h3 className="text-2xl font-bold mb-6 text-center">¿Dónde puede aplicarse OPTA?</h3>
           <p className="text-center text-gray-600 mb-10">
             Cada organización tiene sus desafíos. Aquí algunos ejemplos de aplicación real:
