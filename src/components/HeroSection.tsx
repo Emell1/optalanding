@@ -32,54 +32,53 @@ const HeroSection: React.FC = () => {
     const targetPosition = contactElement.offsetTop;
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
-    const duration = 50625; // Duplicamos la velocidad (reducimos a la mitad: 101250/2 = 50625 ms)
-    let startTime: number | null = null;
+    const duration = 55688; // 10% más lento que 50625 (50625 * 1.1 = 55688 ms)
     
     // Add event listener to stop scrolling on click
     document.addEventListener('click', stopAutoScroll);
     
     // Initial immediate scroll to show action
     window.scrollTo({
-      top: startPosition + 5, // Slightly larger jump for more immediate feedback
+      top: startPosition + 5, // Small jump for immediate feedback
       behavior: 'auto'
     });
     
-    // Animation function with immediate start
-    const animateScroll = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
+    // Use linear animation for constant speed
+    const linearScroll = () => {
+      const elapsed = Date.now() - startTime;
       
       if (elapsed < duration) {
-        // Calculate progress with easing
+        // Calculate progress with linear motion (constant speed)
         const progress = elapsed / duration;
-        const easeInOutCubic = progress < 0.5 
-          ? 4 * progress * progress * progress 
-          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
         
         // Calculate new position
-        const newPosition = startPosition + distance * easeInOutCubic;
+        const newPosition = startPosition + distance * progress;
         
         // Perform the scroll
         window.scrollTo({
           top: newPosition,
-          behavior: 'auto' // Use auto instead of smooth for consistent animation
+          behavior: 'auto'
         });
         
         // Continue animation
-        scrollAnimationRef.current = requestAnimationFrame(animateScroll);
+        scrollAnimationRef.current = requestAnimationFrame(linearScroll);
       } else {
         // Animation complete
         stopAutoScroll();
+        
+        // Ensure we're at the exact target position
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'auto'
+        });
       }
     };
     
-    // Start the animation immediately - make it a higher priority
-    setTimeout(() => {
-      scrollAnimationRef.current = requestAnimationFrame(animateScroll);
-    }, 0);
+    // Start the animation immediately
+    const startTime = Date.now();
+    scrollAnimationRef.current = requestAnimationFrame(linearScroll);
     
-    // Add a console log to confirm the function was called
-    console.log("Auto scroll started", { startPosition, targetPosition, distance, duration: "50.625 segundos (duplicada la velocidad)" });
+    console.log("Auto scroll started", { startPosition, targetPosition, distance, duration: "55.688 segundos (10% más lento, velocidad constante)" });
   };
 
   const stopAutoScroll = () => {
