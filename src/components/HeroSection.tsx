@@ -1,9 +1,69 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Play } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
+  const scrollIntervalRef = useRef<number | null>(null);
+
+  const startAutoScroll = () => {
+    // Detener cualquier scroll previo
+    if (scrollIntervalRef.current) {
+      clearInterval(scrollIntervalRef.current);
+    }
+
+    // Obtener la posición del elemento de contacto
+    const contactElement = document.getElementById('contact');
+    if (!contactElement) return;
+    
+    const targetPosition = contactElement.offsetTop;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 15000; // 15 segundos para el scroll
+    const scrollStep = 10; // Intervalo en ms para cada paso
+    
+    let startTime: number | null = null;
+
+    // Función para manejar cada paso del scroll
+    const animateScroll = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      
+      // Calcular la nueva posición con una función de easing
+      const progress = Math.min(elapsed / duration, 1);
+      const easeInOutCubic = progress < 0.5 
+        ? 4 * progress * progress * progress 
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      
+      const newPosition = startPosition + distance * easeInOutCubic;
+      
+      window.scrollTo(0, newPosition);
+      
+      // Continuar la animación si no ha terminado
+      if (elapsed < duration) {
+        scrollIntervalRef.current = window.requestAnimationFrame(animateScroll);
+      }
+    };
+    
+    // Iniciar la animación
+    scrollIntervalRef.current = window.requestAnimationFrame(animateScroll);
+    
+    // Agregar un event listener para detener el scroll al hacer clic
+    document.addEventListener('click', stopAutoScroll);
+  };
+
+  const stopAutoScroll = () => {
+    if (scrollIntervalRef.current) {
+      if (typeof scrollIntervalRef.current === 'number') {
+        window.cancelAnimationFrame(scrollIntervalRef.current);
+      }
+      scrollIntervalRef.current = null;
+      
+      // Eliminar el event listener
+      document.removeEventListener('click', stopAutoScroll);
+    }
+  };
+
   return (
     <section className="py-16 md:py-24">
       <div className="container px-4 mx-auto">
@@ -18,7 +78,7 @@ const HeroSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <button 
                 className="bg-gradient-to-r from-opta-purple to-opta-purple-dark hover:from-opta-purple-dark hover:to-opta-purple text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={startAutoScroll}
               >
                 Descubre cómo funciona
               </button>
