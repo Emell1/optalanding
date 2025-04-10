@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
       <div className="container px-4 mx-auto flex items-center justify-between">
         <div className="flex items-center">
           <img 
-            src="https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-logo.png" 
+            src="/lovable-uploads/d2543d93-96ee-41ff-87cf-d10aa26fafbc.png" 
             alt="Logo de OPTA" 
             className="h-14" 
           />
