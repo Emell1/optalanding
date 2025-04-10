@@ -50,11 +50,11 @@ const FeatureSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-3 rounded-xl overflow-hidden shadow-xl h-[400px] relative">
             <img 
-              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&q=80" 
+              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&q=80&blur=5" 
               alt="Profesionales en una oficina moderna utilizando la plataforma OPTA con su interfaz de filtros dinámicos y chat conversacional" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-white/80 flex flex-col justify-end p-6">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-6">
               <h3 className="text-2xl font-bold mb-2">Visualiza lo que OPTA puede hacer</h3>
               <p className="text-gray-700">Interfaz intuitiva que combina filtros dinámicos con respuestas conversacionales enriquecidas.</p>
             </div>
