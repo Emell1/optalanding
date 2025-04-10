@@ -10,9 +10,7 @@ const HeroSection: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="w-full md:w-1/2 space-y-6 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-6">
-              Optimiza tus <span className="gradient-text">procesos</span>, 
-              <span className="gradient-text"> tareas</span> <span className="mx-1">y</span> 
-              <span className="gradient-text">aprendizaje</span>
+              Optimiza tus <span className="gradient-text">procesos</span>, <span className="gradient-text">tareas</span> <span>y </span><span className="gradient-text">aprendizaje</span>
             </h1>
             <p className="text-xl text-gray-600 md:pr-8">
               OPTA es una herramienta inteligente que se personaliza según tus necesidades. Combina tecnología conversacional con análisis estratégico para mejorar cómo trabajas, aprendes y decides.
