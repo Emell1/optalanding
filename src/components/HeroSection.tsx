@@ -16,12 +16,12 @@ const HeroSection: React.FC = () => {
               OPTA es una herramienta inteligente que se personaliza según tus necesidades. Combina tecnología conversacional con análisis estratégico para mejorar cómo trabajas, aprendes y decides.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Button 
-                className="bg-opta-purple hover:bg-opta-purple-dark px-8 py-6 text-lg"
+              <button 
+                className="bg-gradient-to-r from-opta-purple to-opta-purple-dark hover:from-opta-purple-dark hover:to-opta-purple text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Descubre cómo funciona
-              </Button>
+              </button>
             </div>
           </div>
           <div className="w-full md:w-1/2 relative">
