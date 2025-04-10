@@ -50,8 +50,8 @@ const FeatureSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-3 rounded-xl overflow-hidden shadow-xl h-[400px] relative">
             <img 
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
-              alt="Espacio de trabajo abierto con colaboradores concentrados" 
+              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952" 
+              alt="Espacio de trabajo abierto con profesionales concentrados" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-white/80 flex flex-col justify-end p-6">
