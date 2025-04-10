@@ -106,15 +106,6 @@ const DemoSection: React.FC = () => {
             ))}
           </div>
         </div>
-        
-        <div className="mt-16 text-center">
-          <button 
-            className="bg-gradient-to-r from-opta-purple to-opta-purple-dark hover:from-opta-purple-dark hover:to-opta-purple text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Comienza tu proceso de diagnóstico
-          </button>
-        </div>
       </div>
     </section>
   );
