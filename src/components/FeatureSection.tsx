@@ -85,7 +85,10 @@ const FeatureSection: React.FC = () => {
               <p className="text-white/90 mb-6">
                 Descubre cómo OPTA puede adaptarse específicamente a los procesos de tu organización.
               </p>
-              <button className="bg-white text-opta-purple hover:bg-gray-100 px-6 py-3 rounded-lg shadow-md font-medium transition-colors w-fit">
+              <button 
+                className="bg-white text-opta-purple hover:bg-gray-100 px-6 py-3 rounded-lg shadow-md font-medium transition-colors w-fit"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Solicitar una demo
               </button>
             </div>
