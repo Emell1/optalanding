@@ -8,6 +8,7 @@ import DemoSection from '@/components/DemoSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
+import BackToTopButton from '@/components/BackToTopButton';
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
         <ContactForm />
         <Footer />
       </div>
+      <BackToTopButton />
     </div>
   );
 };
