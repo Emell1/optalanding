@@ -1,30 +1,30 @@
 
 import React from 'react';
-import { Search, Settings, MessageSquare, Layers, RefreshCw } from 'lucide-react';
+import { MdSearch, MdSettings, MdChat, MdLayers, MdRefresh } from 'react-icons/md';
 
 const metodologySteps = [
   {
-    icon: <Search className="h-10 w-10 text-opta-purple-light" />,
+    icon: <MdSearch className="h-10 w-10 text-opta-purple-light" />,
     title: "Diagnóstico inicial",
     description: "Analizamos tus procesos actuales, puntos críticos y oportunidades de mejora."
   },
   {
-    icon: <MessageSquare className="h-10 w-10 text-opta-purple-light" />,
+    icon: <MdChat className="h-10 w-10 text-opta-purple-light" />,
     title: "Diseño conversacional",
     description: "Definimos cómo debe responder OPTA según tu lógica de negocio."
   },
   {
-    icon: <Settings className="h-10 w-10 text-opta-purple-light" />,
+    icon: <MdSettings className="h-10 w-10 text-opta-purple-light" />,
     title: "Configuración personalizada",
     description: "Creamos filtros, contenidos y niveles de respuesta adaptados a tu operación."
   },
   {
-    icon: <Layers className="h-10 w-10 text-opta-purple-light" />,
+    icon: <MdLayers className="h-10 w-10 text-opta-purple-light" />,
     title: "Implementación ágil",
     description: "Integramos la solución en tus sistemas y capacitamos a tu equipo."
   },
   {
-    icon: <RefreshCw className="h-10 w-10 text-opta-purple-light" />,
+    icon: <MdRefresh className="h-10 w-10 text-opta-purple-light" />,
     title: "Mejora continua",
     description: "Seguimos ajustando y evolucionando OPTA con base en datos reales."
   }

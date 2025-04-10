@@ -1,20 +1,29 @@
 
 import React from 'react';
-import { TrendingUp, Check, Repeat, ArrowRight, Briefcase, Users, Headphones, BookOpen } from 'lucide-react';
+import { 
+  MdTrendingUp, 
+  MdCheck, 
+  MdLoop, 
+  MdArrowForward, 
+  MdBusinessCenter, 
+  MdPeople, 
+  MdHeadsetMic, 
+  MdMenuBook 
+} from 'react-icons/md';
 
 const benefits = [
   {
-    icon: <TrendingUp className="h-10 w-10 text-opta-purple" />,
+    icon: <MdTrendingUp className="h-10 w-10 text-opta-purple" />,
     title: 'Procesos más simples y efectivos',
     description: 'Desarrollamos flujos conversacionales claros y optimizados para tu equipo.'
   },
   {
-    icon: <Check className="h-10 w-10 text-opta-purple" />,
+    icon: <MdCheck className="h-10 w-10 text-opta-purple" />,
     title: 'Acceso inteligente al conocimiento',
     description: 'Tus recursos clave, organizados y listos para ser consultados cuando se necesitan.'
   },
   {
-    icon: <Repeat className="h-10 w-10 text-opta-purple" />,
+    icon: <MdLoop className="h-10 w-10 text-opta-purple" />,
     title: 'Alineación entre áreas',
     description: 'Una única fuente de verdad para todos, con respuestas coherentes y actualizadas.'
   }
@@ -22,22 +31,22 @@ const benefits = [
 
 const useCases = [
   {
-    icon: <Briefcase className="h-10 w-10 text-opta-purple" />,
+    icon: <MdBusinessCenter className="h-10 w-10 text-opta-purple" />,
     title: "Equipos comerciales que necesitan acceder a respuestas rápidas y coherentes",
     description: "Información de productos, precios y procesos siempre actualizada y accesible"
   },
   {
-    icon: <Users className="h-10 w-10 text-opta-purple" />,
+    icon: <MdPeople className="h-10 w-10 text-opta-purple" />,
     title: "Soporte interno de RRHH para onboarding y gestión de consultas",
     description: "Políticas, procedimientos y respuestas a preguntas frecuentes en un solo lugar"
   },
   {
-    icon: <Headphones className="h-10 w-10 text-opta-purple" />,
+    icon: <MdHeadsetMic className="h-10 w-10 text-opta-purple" />,
     title: "Centros de atención con procesos repetitivos que requieren guía precisa",
     description: "Flujos de trabajo guiados y respuestas estandarizadas para mayor consistencia"
   },
   {
-    icon: <BookOpen className="h-10 w-10 text-opta-purple" />,
+    icon: <MdMenuBook className="h-10 w-10 text-opta-purple" />,
     title: "Equipos de formación con recursos dispersos o poco estructurados",
     description: "Centralización de materiales formativos y acceso con filtrado inteligente"
   }
