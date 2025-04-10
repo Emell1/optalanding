@@ -1,36 +1,36 @@
 
 import React from 'react';
-import { MdFilterList, MdChat, MdSearch, MdBarChart, MdLock, MdSettings } from 'react-icons/md';
+import { Filter, MessageSquare, Search, BarChart3, Lock, Settings } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
   {
-    icon: <MdFilterList className="h-8 w-8 text-opta-purple" />,
+    icon: <Filter className="h-8 w-8 text-opta-purple" />,
     title: 'Filtros dinámicos',
     description: 'Activan categorías, ítems y subitems según el contexto de tu consulta.'
   },
   {
-    icon: <MdChat className="h-8 w-8 text-opta-purple" />,
+    icon: <MessageSquare className="h-8 w-8 text-opta-purple" />,
     title: 'Chat conversacional',
     description: 'Interacción natural con respuestas enriquecidas y adaptadas a tus necesidades.'
   },
   {
-    icon: <MdSearch className="h-8 w-8 text-opta-purple" />,
+    icon: <Search className="h-8 w-8 text-opta-purple" />,
     title: 'Búsqueda priorizada',
     description: 'Encuentra información por palabras clave con lógica de prioridades integrada.'
   },
   {
-    icon: <MdBarChart className="h-8 w-8 text-opta-purple" />,
+    icon: <BarChart3 className="h-8 w-8 text-opta-purple" />,
     title: 'Registro de historial',
     description: 'Seguimiento de métricas por usuario para analizar el uso y optimizar la herramienta.'
   },
   {
-    icon: <MdLock className="h-8 w-8 text-opta-purple" />,
+    icon: <Lock className="h-8 w-8 text-opta-purple" />,
     title: 'Perfiles y permisos',
     description: 'Gestión avanzada de contenidos y accesos según el rol de cada usuario.'
   },
   {
-    icon: <MdSettings className="h-8 w-8 text-opta-purple" />,
+    icon: <Settings className="h-8 w-8 text-opta-purple" />,
     title: 'Panel administrador',
     description: 'Interfaz personalizable para gestionar todos los aspectos de la plataforma.'
   }
