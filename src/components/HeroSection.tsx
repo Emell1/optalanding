@@ -9,7 +9,7 @@ const HeroSection: React.FC = () => {
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="w-full md:w-1/2 space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter pb-1">
               Optimiza tus <span className="gradient-text">procesos</span>, <span className="gradient-text">tareas</span> y <span className="gradient-text">aprendizaje</span>
             </h1>
             <p className="text-xl text-gray-600 md:pr-8">
