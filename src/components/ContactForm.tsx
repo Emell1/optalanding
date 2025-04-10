@@ -17,6 +17,7 @@ const formSchema = z.object({
   api_key: z.string().optional(),
   user: z.string().optional(),
   redirect: z.string().optional(),
+  subject: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -32,6 +33,7 @@ const ContactForm: React.FC = () => {
       message: '',
       api_key: 'v0gp3aG2l54C6pY9WAj0dP',
       user: 'OptaLanding',
+      subject: 'Consulta desde la landing de Opta',
     },
   });
 
