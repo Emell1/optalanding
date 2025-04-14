@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer"
             >
               <img 
-                src="/lovable-uploads/d2543d93-96ee-41ff-87cf-d10aa26fafbc.png"
+                src="/lovable-uploads/9dff30a6-79fc-4c48-8912-e98fb9062ebf.png"
                 alt="Praxia Logo"
                 className="inline-block h-6 mx-2 align-middle hover:opacity-80 transition-opacity"
               />
