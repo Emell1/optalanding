@@ -1,6 +1,5 @@
 
 import React from 'react';
-import PraxiaGif from './PraxiaGif';
 
 const Footer: React.FC = () => {
   return (
@@ -15,7 +14,17 @@ const Footer: React.FC = () => {
               className="inline-block h-6 mx-2 align-middle"
             />
             es de
-            <PraxiaGif />
+            <a 
+              href="https://www.praxia.site/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <img 
+                src="/lovable-uploads/d2543d93-96ee-41ff-87cf-d10aa26fafbc.png"
+                alt="Praxia Logo"
+                className="inline-block h-6 mx-2 align-middle hover:opacity-80 transition-opacity"
+              />
+            </a>
             . Transformamos procesos en conocimiento.
           </p>
         </div>
