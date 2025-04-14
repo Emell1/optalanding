@@ -4,9 +4,9 @@ import PraxiaGif from './PraxiaGif';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-white text-black py-8">
       <div className="container px-4 mx-auto">
-        <div className="text-center text-gray-500">
+        <div className="text-center text-black">
           <p>
             © {new Date().getFullYear()} 
             <img 
