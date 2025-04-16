@@ -122,7 +122,7 @@ const HeroSection: React.FC = () => {
           </div>
           <div className="w-full md:w-1/2 relative">
             <img 
-              src="https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-1.png" 
+              src="/hero-1.png" 
               alt="Interfaz de OPTA con procesos personalizados, filtros configurables y diagnóstico" 
               className="w-full h-auto rounded-xl shadow-xl animate-fade-in" 
             />
