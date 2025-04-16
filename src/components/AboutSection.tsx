@@ -1,22 +1,74 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const AboutSection: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isMobile = useIsMobile();
+  
+  useEffect(() => {
+    // Función para asegurar que el video se reproduce correctamente
+    const handleVideoPlay = () => {
+      if (videoRef.current) {
+        // En algunos dispositivos móviles, se necesita recargar el video
+        // para que comience la reproducción correctamente
+        videoRef.current.load();
+        
+        // Pequeño retraso para asegurar que el video se cargue completamente
+        setTimeout(() => {
+          if (videoRef.current) {
+            const playPromise = videoRef.current.play();
+            
+            // Manejar la promesa para evitar errores en consola
+            if (playPromise !== undefined) {
+              playPromise.catch(error => {
+                console.log('Error al reproducir el video:', error);
+              });
+            }
+          }
+        }, 300);
+      }
+    };
+    
+    // Iniciar reproducción cuando el componente se monta
+    handleVideoPlay();
+    
+    // Evento para dispositivos móviles para reiniciar el video cuando
+    // se recupera la visibilidad de la página
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        handleVideoPlay();
+      }
+    });
+    
+    return () => {
+      document.removeEventListener('visibilitychange', handleVideoPlay);
+    };
+  }, []);
+
   return (
     <section className="py-16 bg-white">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2">
-            <video autoPlay muted loop className={`rounded-xl shadow-xl`}>
+            <video 
+              ref={videoRef}
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className={`rounded-xl shadow-xl`}
+              preload="auto"
+            >
               <source src="/hero.mp4" type="video/mp4" />
               Tu navegador no puede cargar el video
             </video>
           </div>
           
           <div className="w-full lg:w-1/2 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tighter mb-6">
               Más que una herramienta, una solución diseñada para ti
             </h2>
             
