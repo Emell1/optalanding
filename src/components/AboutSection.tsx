@@ -9,11 +9,10 @@ const AboutSection: React.FC = () => {
       <div className="container px-4 mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2">
-            <img 
-              src="https://aa063bb9-60ce-49cb-86a6-6a888e37d7f2.lovableproject.com/opta-screenshot-1.png" 
-              alt="OPTA personalized solution" 
-              className="rounded-xl shadow-lg w-full h-auto" 
-            />
+            <video autoPlay muted loop className={`rounded-xl shadow-xl`}>
+              <source src="/hero.mp4" type="video/mp4" />
+              Tu navegador no puede cargar el video
+            </video>
           </div>
           
           <div className="w-full lg:w-1/2 space-y-6">
